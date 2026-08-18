@@ -1,11 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBRAS DE RODOVIAS | HOME</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de rodovias do Estado de São Paulo">
+  <title>Rodovias SP | Portal Rodoviário</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>OBRAS DE RODOVIAS DO BRASIL</h1>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-mark">SP</span>
+        <span><strong>Rodovias</strong><small>São Paulo</small></span>
+      </a>
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#principais">Principais</a>
+        <a href="#rodovias">Rodovias</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <button id="themeToggle" class="icon-btn" aria-label="Alternar tema">☾</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">PORTAL RODOVIÁRIO PAULISTA</span>
+          <h1>As rodovias de São Paulo em um só lugar.</h1>
+          <p class="hero-text">
+            Consulte códigos, denominações, principais pontos de passagem e informações
+            da malha rodoviária estadual.
+          </p>
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="heroSearch" type="search" placeholder="Pesquise por SP-270, Raposo Tavares..." autocomplete="off">
+          </div>
+          <div class="quick-tags">
+            <button data-search="SP-270">SP-270</button>
+            <button data-search="SP-280">SP-280</button>
+            <button data-search="SP-300">SP-300</button>
+            <button data-search="SP-330">SP-330</button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="road-lines"></div>
+          <div class="hero-card-content">
+            <span class="card-label">MALHA ESTADUAL</span>
+            <strong>SP</strong>
+            <span>Rodovias estaduais de São Paulo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div><strong id="totalRoads">0</strong><span>rodovias cadastradas</span></div>
+        <div><strong>189+</strong><span>códigos na relação do DER-SP</span></div>
+        <div><strong>645</strong><span>municípios no estado</span></div>
+        <div><strong>SP</strong><span>identificação estadual</span></div>
+      </div>
+    </section>
+
+    <section id="principais" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">DESTAQUES</span>
+            <h2>Principais corredores</h2>
+          </div>
+          <p>Algumas das rodovias mais conhecidas do estado.</p>
+        </div>
+        <div id="featuredGrid" class="featured-grid"></div>
+      </div>
+    </section>
+
+    <section id="rodovias" class="section roads-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">CATÁLOGO</span>
+            <h2>Todas as rodovias</h2>
+          </div>
+          <p id="resultCount"></p>
+        </div>
+
+        <div class="filters">
+          <div class="search-box compact">
+            <span>⌕</span>
+            <input id="roadSearch" type="search" placeholder="Nome, código ou cidade..." autocomplete="off">
+          </div>
+          <select id="typeFilter">
+            <option value="all">Todos os tipos</option>
+            <option value="radial">Radial</option>
+            <option value="transversal">Transversal</option>
+            <option value="litoral">Litoral</option>
+            <option value="interior">Interior</option>
+          </select>
+          <button id="clearFilters" class="clear-btn">Limpar</button>
+        </div>
+
+        <div id="roadGrid" class="road-grid"></div>
+        <button id="loadMore" class="load-more">Carregar mais</button>
+      </div>
+    </section>
+
+    <section id="sobre" class="section about">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">SOBRE O PORTAL</span>
+          <h2>Informação organizada para quem vive a estrada.</h2>
+        </div>
+        <div>
+          <p>
+            Este projeto apresenta uma interface independente para consulta das rodovias
+            paulistas. Os códigos e os principais pontos de passagem usados no catálogo
+            foram estruturados a partir da relação de rodovias estaduais disponibilizada
+            pelo DER-SP.
+          </p>
+          <p class="note">
+            Este site não representa oficialmente o DER-SP, ARTESP ou qualquer concessionária.
+            Informações de trânsito, obras e bloqueios devem ser confirmadas nos canais oficiais.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <span>© 2026 Rodovias SP</span>
+      <span>Portal informativo independente</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
